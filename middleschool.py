@@ -7,7 +7,7 @@ This is a temporary script file.
 #%% Load Data 
 import pandas as pd 
 data = pd.read_csv('middleSchoolData.csv')
-#%% Q1
+#%% Q1: What is the correlation between applications and acceptance? 
 a = data['applications'].isna().sum()
 #%%
 a = data['acceptances'].isna().sum() 
@@ -23,7 +23,8 @@ plt.xlabel('applications')
 plt.ylabel('acceptances')
 plt.title('App X Acc')
 
-#%% Q2
+
+#%% Q2 
 q2cleandata=data.dropna(subset=['school_size'])
 app_rate=q2cleandata['applications']/q2cleandata['school_size']
 app_rateAcceptR=np.corrcoef(app_rate,q2cleandata.acceptances)
